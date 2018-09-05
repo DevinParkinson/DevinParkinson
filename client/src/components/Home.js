@@ -211,7 +211,7 @@ class Home extends Component {
                         <img src={k4} alt="Kuku Shopping" style={styles.link} />
                         <p className="legend">Going Kuku is shopping one product at a time. Swipe right if you want an item and we will add it to your cart.</p>
                       </div>
-                    </Carousel1>
+                    </Carousel>
                   </Modal.Content>
                 </Modal>
               </Accordion.Content>
