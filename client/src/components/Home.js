@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Header, Segment, Image, Reveal, Dimmer, Accordion, Icon, Modal, Button, Divider, Grid, Container, Label } from 'semantic-ui-react';
-import styled from 'styled-components'
 import Me from '../images/Me.jpg'
 import Family from '../images/Family.jpg'
 import Kings from '../images/Kings Peak'
@@ -17,23 +16,6 @@ import k4 from '../images/k4'
 import { Carousel } from 'react-responsive-carousel';
 import './carousel.css';
 import './home.css'
-
-const Top = styled.div`
-  height: 96vh;
-  width: 100%;
-  background-color: black;
-  color: white;
-`
-const Middle = styled.div`
-  height: 100vh;
-  width: 100%;
-`
-
-const Carousel1 = styled(Carousel)`
-  height: 50vh;
-  width: auto;
-  overflow: hidden;
-`
 
 class Home extends Component {
 
@@ -56,7 +38,7 @@ class Home extends Component {
 
     return (
       <div>
-        <Top>
+        <div style={styles.Top}>
           <Segment.Group>
             <Segment style={styles.lseg}>
               <Header style={styles.header1}>Devin Parkinson</Header>
@@ -84,7 +66,7 @@ class Home extends Component {
           <Image src="http://willmoreoutfitters.ca/wp-content/uploads/2017/04/arrow-down@2x.png" style={{height: '6vh', marginLeft: "54%"}} />
         </Top>
         <Dimmer.Dimmable as={Segment} dimmed={active}>
-        <Middle>
+        <div style={styles.middle}>
           <Container style={{backgroundColor: '#bbbbbb', color: 'white', textDecoration: 'underline', padding: '1%'}}>
             <Label as="h3" color="blue" ribbon>My Background</Label>
             <p>Before I went into development, I was working for: <Modal trigger={<p style={styles.inbutton}>Fidelity Investments</p>}>
@@ -156,7 +138,7 @@ class Home extends Component {
                 </p>
                 <Modal trigger={<Button positive>See Website Images</Button>}>
                   <Modal.Content>
-                    <Carousel1 autoPlay infiniteLoop showArrows={true} style={styles.carousel}>
+                    <Carousel autoPlay infiniteLoop showArrows={true} style={styles.carousel}>
                       <div>
                         <img src={B2B} alt="Main Page" style={styles.link}/>
                         <p className="legend">This is a Fully Functional and responsive website</p>
@@ -236,7 +218,7 @@ class Home extends Component {
             </Accordion>
           </Segment>
           </Dimmer>
-        </Middle>
+        </div>
       </Dimmer.Dimmable>
       </div>
     );
@@ -244,6 +226,16 @@ class Home extends Component {
 }
 
 const styles = {
+  Top: {
+    height: '96vh'
+    width: '100%',
+    backgroundColor: 'black',
+    color: 'white',
+  },
+  middle: {
+    height: '100vh'
+    width: '100%',
+  },
   header: {
     fontFamily: "coven-medium,sans-serif",
     textAlign: 'center',
@@ -286,7 +278,8 @@ const styles = {
     height: '50vh'
   },
   carousel: {
-    height: '15vh !important',
+    height: '50vh',
+    width: 'auto',
     overFlow: 'hidden',
   },
   inbutton: {
