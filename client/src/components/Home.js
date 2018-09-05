@@ -153,7 +153,7 @@ class Home extends Component {
                         <img src={B2BPay} alt="Main Page lower" style={styles.link} />
                         <p className="legend">Allows you to sign up for a monthly payment subscription. Integrated through Braintree.</p>
                       </div>
-                    </Carousel1>
+                    </Carousel>
                   </Modal.Content>
                 </Modal>
               </Accordion.Content>
@@ -167,7 +167,7 @@ class Home extends Component {
                 </p>
                   <Modal trigger={<Button positive>See Website Images</Button>}>
                     <Modal.Content>
-                      <Carousel1 autoPlay infiniteLoop showArrows={true} style={styles.carousel}>
+                      <Carousel autoPlay infiniteLoop showArrows={true} style={styles.carousel}>
                         <div>
                           <img src={Kings} alt="Main Page" style={styles.link}/>
                           <p className="legend">Here shows how I set up the Main page using a React Responsive Carousel</p>
@@ -180,7 +180,7 @@ class Home extends Component {
                           <img src={KP} alt="Customization Page" style={styles.link} />
                           <p className="legend">Allows you to customize the pistol that you have chosen the way you want. A lot of redux used here...</p>
                         </div>
-                      </Carousel1>
+                      </Carousel>
                     </Modal.Content>
                   </Modal>
               </Accordion.Content>
@@ -194,7 +194,7 @@ class Home extends Component {
                 </p>
                 <Modal trigger={<Button positive>See Website Images</Button>}>
                   <Modal.Content>
-                    <Carousel1 autoPlay infiniteLoop showArrows={true} style={styles.carousel}>
+                    <Carousel autoPlay infiniteLoop showArrows={true} style={styles.carousel}>
                       <div>
                         <img src={K} alt="Home Page" style={styles.link} />
                         <p className="legend">Another Fully Responsive Design</p>
