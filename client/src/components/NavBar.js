@@ -21,7 +21,7 @@ class NavBar extends Component {
             <Dropdown.Item>
               <Link to="/about" style={{color: "black"}}>
                 <Icon name="question circle outline" size="large" />
-                About
+                Personal Life
               </Link>
             </Dropdown.Item>
           </Dropdown.Menu>

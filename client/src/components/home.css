@@ -10,31 +10,12 @@
 }
 @-webkit-keyframes pulsate {
     0% {
-        opacity: 0.5;
+        opacity: 0.2;
     }
     50% {
         opacity: 1.0;
     }
     100% {
-        opacity: 0.5;
-    }
-}
-
-.pulse {
-    -webkit-animation: pulsate 2s;
-    -webkit-animation-iteration-count: infinite;
-    opacity: 0.5;
-    height: 6vh;
-    margin-left: 50%;
-}
-@-webkit-keyframes pulse {
-    0% {
-        opacity: 0.5;
-    }
-    50% {
-        opacity: 1.0;
-    }
-    100% {
-        opacity: 0.5;
+        opacity: 0.2;
     }
 }
