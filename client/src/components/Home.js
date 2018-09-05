@@ -227,13 +227,13 @@ class Home extends Component {
 
 const styles = {
   Top: {
-    height: '96vh'
+    height: '96vh',
     width: '100%',
     backgroundColor: 'black',
     color: 'white',
   },
   middle: {
-    height: '100vh'
+    height: '100vh',
     width: '100%',
   },
   header: {
