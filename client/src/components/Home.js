@@ -64,7 +64,7 @@ class Home extends Component {
           </Segment.Group>
           <p class="pulsate">Scroll Down To See Credentials</p>
           <Image src="http://willmoreoutfitters.ca/wp-content/uploads/2017/04/arrow-down@2x.png" style={{height: '6vh', marginLeft: "54%"}} />
-        </Top>
+        </div>
         <Dimmer.Dimmable as={Segment} dimmed={active}>
         <div style={styles.middle}>
           <Container style={{backgroundColor: '#bbbbbb', color: 'white', textDecoration: 'underline', padding: '1%'}}>
