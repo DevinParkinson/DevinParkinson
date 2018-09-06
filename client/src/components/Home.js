@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Header, Segment, Image, Reveal, Dimmer, Accordion, Icon, Modal, Button, Divider, Grid, Container, Label } from 'semantic-ui-react';
+import styled from 'styled-components'
 import Me from '../images/Me.jpg'
 import Family from '../images/Family.jpg'
 import Kings from '../images/Kings Peak'
@@ -16,6 +17,12 @@ import k4 from '../images/k4'
 import { Carousel } from 'react-responsive-carousel';
 import './carousel.css';
 import './home.css'
+
+const Carousel1 = styled(Carousel)`
+  height: 50vh;
+  width: auto;
+  over-flow: hidden;
+`
 
 class Home extends Component {
 
@@ -67,27 +74,43 @@ class Home extends Component {
         </div>
         <Dimmer.Dimmable as={Segment} dimmed={active}>
         <div style={styles.middle}>
-          <Container style={{backgroundColor: '#bbbbbb', color: 'white', textDecoration: 'underline', padding: '1%'}}>
+          <Container fluid style={{backgroundColor: '#909090', color: 'white', fontSize: '2vh', marginLeft: '1vw', padding: '1vw'}}>
             <Label as="h3" color="blue" ribbon>My Background</Label>
-            <p>Before I went into development, I was working for: <Modal trigger={<p style={styles.inbutton}>Fidelity Investments</p>}>
-              <Modal.Content>
+            <p>Before I went into Software Development, I was working for:<Modal trigger={<p style={styles.inbutton}>Fidelity Investments</p>}>
+              <Modal.Content style={{height: '50vh', width: '50vw'}}>
                 <Header as="h1" style={{textAlign: 'center'}}>
-                  Fidelity Investments
-                  <Image src="http://www.explora.us/wp-content/uploads/2018/04/fidelity-sq-logo.jpg" avatar />
+                  <Image src="http://1000logos.net/wp-content/uploads/2017/08/Fidelity-Logo.png" avatar />
                 </Header>
-                <div>I worked for Fidelity Investments for 2.5 years.</div>
-                <div>Most of what I did there was working with Equity Compensation plans. Also known as Stock Plans.</div>
+                <li>I worked for Fidelity Investments for 2.5 years.</li>
+                <li>Most of what I did there was working with Equity Compensation plans. Also known as Stock Plans.</li>
+                <li>I worked on a Windows computer handling several systems on multiple screens at the same time.</li>
+                <li>When I left I was the top rated representative in the nation for all Stock Plan Associates.</li>
               </Modal.Content>
             </Modal>
           </p>
-          <p></p>
+          <Modal trigger={<p style={styles.inbutton}>JC Penney</p>}>
+            <Modal.Content style={{height: '50vh', width: '50vw'}}>
+              <Header as="h1" style={{textAlign: 'center'}}>
+                <Image src="https://cblproperty.blob.core.windows.net/production/assets/blt9c47aac174a95228-JCPenney_710.png" avatar />
+              </Header>
+              <li>I worked at JC Penneys inbound phone center in Downtown SLC, handling calls from stores and providing all the procedural information they need to complete their jobs.</li>
+              <li>I worked on a windows OS working with several systems all at the same time. At times remotely logging into other computers to handle fixes on the computers at the stores location.</li>
+            </Modal.Content>
+          </Modal>
         </Container>
+        <Divider hidden />
+        <Container fluid style={{backgroundColor: '#0079c7', color: 'white', fontSize: '2vh', marginLeft: '1vw', padding: '1vw'}}>
+          <Label as="h3" color="#909090" ribbon>My Education</Label>
+          <p>DevPoint Labs</p>
+          <p>Weber State University</p>
+        </Container>
+        <Divider />
+        <br/><br/><br/><br/><br/><br/>
           <Header>
             Skills
           </Header>
           <Grid celled style={{textAlign: 'center', fontFamily: 'coven-medium,sans-serif', fontSize: '2vh'}}>
             <Grid.Row>
-              <Label attached="top left">List of Skills Acquired</Label>
               <Grid.Column width={4}>
                 Languages
                 <Image src="http://www.bobbyberberyan.com/wp-content/uploads/2016/12/ES6LOGO.svg" avatar />
@@ -138,7 +161,7 @@ class Home extends Component {
                 </p>
                 <Modal trigger={<Button positive>See Website Images</Button>}>
                   <Modal.Content>
-                    <Carousel autoPlay infiniteLoop showArrows={true} style={styles.carousel}>
+                    <Carousel1 autoPlay infiniteLoop showArrows={true} style={styles.carousel}>
                       <div>
                         <img src={B2B} alt="Main Page" style={styles.link}/>
                         <p className="legend">This is a Fully Functional and responsive website</p>
@@ -153,7 +176,7 @@ class Home extends Component {
                         <img src={B2BPay} alt="Main Page lower" style={styles.link} />
                         <p className="legend">Allows you to sign up for a monthly payment subscription. Integrated through Braintree.</p>
                       </div>
-                    </Carousel>
+                    </Carousel1>
                   </Modal.Content>
                 </Modal>
               </Accordion.Content>
@@ -167,7 +190,7 @@ class Home extends Component {
                 </p>
                   <Modal trigger={<Button positive>See Website Images</Button>}>
                     <Modal.Content>
-                      <Carousel autoPlay infiniteLoop showArrows={true} style={styles.carousel}>
+                      <Carousel1 autoPlay infiniteLoop showArrows={true} style={styles.carousel}>
                         <div>
                           <img src={Kings} alt="Main Page" style={styles.link}/>
                           <p className="legend">Here shows how I set up the Main page using a React Responsive Carousel</p>
@@ -180,7 +203,7 @@ class Home extends Component {
                           <img src={KP} alt="Customization Page" style={styles.link} />
                           <p className="legend">Allows you to customize the pistol that you have chosen the way you want. A lot of redux used here...</p>
                         </div>
-                      </Carousel>
+                      </Carousel1>
                     </Modal.Content>
                   </Modal>
               </Accordion.Content>
@@ -194,7 +217,7 @@ class Home extends Component {
                 </p>
                 <Modal trigger={<Button positive>See Website Images</Button>}>
                   <Modal.Content>
-                    <Carousel autoPlay infiniteLoop showArrows={true} style={styles.carousel}>
+                    <Carousel1 autoPlay infiniteLoop showArrows={true} style={styles.carousel}>
                       <div>
                         <img src={K} alt="Home Page" style={styles.link} />
                         <p className="legend">Another Fully Responsive Design</p>
@@ -211,7 +234,7 @@ class Home extends Component {
                         <img src={k4} alt="Kuku Shopping" style={styles.link} />
                         <p className="legend">Going Kuku is shopping one product at a time. Swipe right if you want an item and we will add it to your cart.</p>
                       </div>
-                    </Carousel>
+                    </Carousel1>
                   </Modal.Content>
                 </Modal>
               </Accordion.Content>
