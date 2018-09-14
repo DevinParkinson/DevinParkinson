@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Menu, Header, Icon, Dropdown, Divider } from 'semantic-ui-react';
+import { Menu, Header } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 
@@ -17,6 +17,11 @@ class NavBar extends Component {
             <Menu.Item>
               <Link to="/about" style={{color: "black"}}>
                 Personal Life
+              </Link>
+            </Menu.Item>
+            <Menu.Item>
+              <Link to="/resume" style={{color: "black"}}>
+                Resume
               </Link>
             </Menu.Item>
         <Menu.Item position="right">
