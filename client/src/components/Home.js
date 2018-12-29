@@ -134,7 +134,7 @@ class Home extends Component {
               </Grid.Column>
               <Grid.Column width={4}>
                 Other Tools
-                <Image src="https://1jorbp275diw1mzdov326h98-wpengine.netdna-ssl.com/wp-content/uploads/2016/04/best-seo-tools.jpg" avatar />
+                <Image src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Tools_nicu_buculei_01.svg/1024px-Tools_nicu_buculei_01.svg.png" avatar />
               </Grid.Column>
             </Grid.Row>
             <Grid.Row>

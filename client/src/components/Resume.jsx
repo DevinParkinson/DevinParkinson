@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Document, Page } from 'react-pdf'
 import resume from '../images/Devin Parkinson Resume.pdf'
 
+
 class Resume extends Component {
   state = {
     pageNumber: 1,
@@ -12,14 +13,26 @@ class Resume extends Component {
 
     return(
       <div>
-        <Document
-          file={resume}
-          onLoadSuccess={this.onDocumentLoadSuccess}
+        <div
+          style={styles.res}
           >
-          <Page pageNumber={pageNumber} />
-        </Document>
+          <Document
+            file={resume}
+            onLoadSuccess={this.onDocumentLoadSuccess}
+            >
+            <Page pageNumber={pageNumber} />
+          </Document>
+        </div>
       </div>
     )
+  }
+}
+
+const styles = {
+  res: {
+    display: "block",
+    height: "80vh",
+    width: "50vw",
   }
 }
 

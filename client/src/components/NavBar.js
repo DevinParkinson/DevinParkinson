@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Menu, Header } from 'semantic-ui-react';
+import { Menu } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 
@@ -24,10 +24,7 @@ class NavBar extends Component {
                 Resume
               </Link>
             </Menu.Item>
-        <Menu.Item position="right">
-          <Header as="h3" style={{fontFamily: 'coven-medium,sans-serif'}}>Devin Parkinson</Header>
-        </Menu.Item>
-      </Menu>
+          </Menu>
       </div>
     );
   }
