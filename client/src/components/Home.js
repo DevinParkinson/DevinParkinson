@@ -18,12 +18,6 @@ import { Carousel } from 'react-responsive-carousel';
 import './carousel.css';
 import './home.css'
 
-const Carousel1 = styled(Carousel)`
-  height: 50vh;
-  width: auto;
-  over-flow: hidden;
-`
-
 class Home extends Component {
 
   state = { activeIndex: 0 }
@@ -73,6 +67,9 @@ class Home extends Component {
           <Image src="http://willmoreoutfitters.ca/wp-content/uploads/2017/04/arrow-down@2x.png" style={{height: '6vh', marginLeft: "54%"}} />
         </div>
         <Dimmer.Dimmable as={Segment} dimmed={active}>
+          <Grid columns={2} divided>
+            <Grid.Row>
+            <Grid.Column>
         <div style={styles.middle}>
           <Container fluid style={{backgroundColor: '#909090', color: 'white', fontSize: '2vh', marginLeft: '1vw', padding: '1vw'}}>
             <Label as="h3" color="blue" ribbon>My Background</Label>
@@ -98,12 +95,17 @@ class Home extends Component {
             </Modal.Content>
           </Modal>
         </Container>
+      </div>
+      </Grid.Column>
         <Divider hidden />
-        <Container fluid style={{backgroundColor: '#0079c7', color: 'white', fontSize: '2vh', marginLeft: '1vw', padding: '1vw'}}>
-          <Label as="h3" color="#909090" ribbon>My Education</Label>
-          <p>DevPoint Labs</p>
-          <p>Weber State University</p>
-        </Container>
+        <Grid.Column>
+          <Container fluid style={{backgroundColor: '#0079c7', color: 'white', fontSize: '2vh', marginLeft: '1vw', padding: '1vw'}}>
+            <Label as="h3" color="#909090" ribbon>My Education</Label>
+            <p>DevPoint Labs</p>
+            <p>Weber State University</p>
+          </Container>
+        </Grid.Column>
+      </Grid.Row>
         <Divider />
         <br/><br/><br/><br/><br/><br/>
           <Header>
@@ -159,26 +161,16 @@ class Home extends Component {
                 <p style={{color: 'black'}}>
                 <a href="https://bucket-2-beak.herokuapp.com/" target="_blank" rel="noopener noreferrer">Bucket To Beak</a> is a company started by my brother in law. This was created using a React.js front end. Using Rails backend. Deployed through Heroku. Using a PostgresQL Database.
                 </p>
-                <Modal trigger={<Button positive>See Website Images</Button>}>
-                  <Modal.Content>
-                    <Carousel1 autoPlay infiniteLoop showArrows={true} style={styles.carousel}>
-                      <div>
-                        <img src={B2B} alt="Main Page" style={styles.link}/>
-                        <p className="legend">This is a Fully Functional and responsive website</p>
-                      </div>
-                      <div>
-                        <img src={B2B2} alt="Main Page lower" style={styles.link} />
-                      </div>
-                      <div>
-                        <img src={B2Babout} alt="Main Page lower" style={styles.link} />
-                      </div>
-                      <div>
-                        <img src={B2BPay} alt="Main Page lower" style={styles.link} />
-                        <p className="legend">Allows you to sign up for a monthly payment subscription. Integrated through Braintree.</p>
-                      </div>
-                    </Carousel1>
-                  </Modal.Content>
-                </Modal>
+                  <div>
+                    <img src={B2B} alt="Main Page" height={"200vh"}/>
+                    <p className="legend">This is a Fully Functional and responsive website</p>
+                  </div>
+                  <div>
+                    <img src={B2Babout} alt="Main Page lower" height={"200vh"} />
+                  </div>
+                  <div>
+                    <img src={B2BPay} alt="Main Page lower" height={"200vh"} />
+                  </div>
               </Accordion.Content>
               <Accordion.Title active={activeIndex === 1} index={1} onClick={this.handleClick} style={{color: 'black', textAlign: 'left'}}>
                 Kings Peak Customs
@@ -188,24 +180,18 @@ class Home extends Component {
                 <p style={{color: 'black', textAlign: 'left'}}>
                 <a href="https://kings-peak-customs.herokuapp.com/" target="_blank" rel="noopener noreferrer">Kings Peak Customs</a> is a customized pistol website. This also was created with React.js and Redux on the front end. Rails Back End. Deployed for the time being through Heroku, but will be moved to AWS. Using a PostgresQL Database.
                 </p>
-                  <Modal trigger={<Button positive>See Website Images</Button>}>
-                    <Modal.Content>
-                      <Carousel1 autoPlay infiniteLoop showArrows={true} style={styles.carousel}>
-                        <div>
-                          <img src={Kings} alt="Main Page" style={styles.link}/>
-                          <p className="legend">Here shows how I set up the Main page using a React Responsive Carousel</p>
-                        </div>
-                        <div>
-                          <img src={Main} alt="Main Page lower" style={styles.link} />
-                          <p className="legend">Includes a fun video showing how the pistols are actually made</p>
-                        </div>
-                        <div>
-                          <img src={KP} alt="Customization Page" style={styles.link} />
-                          <p className="legend">Allows you to customize the pistol that you have chosen the way you want. A lot of redux used here...</p>
-                        </div>
-                      </Carousel1>
-                    </Modal.Content>
-                  </Modal>
+                  <div>
+                    <img src={Kings} height={"200vh"} alt="Main Page"/>
+                    <p className="legend">Here shows how I set up the Main page using a React Responsive Carousel</p>
+                  </div>
+                  <div>
+                    <img src={Main} height={"200vh"} alt="Main Page lower" />
+                    <p className="legend">Includes a fun video showing how the pistols are actually made</p>
+                  </div>
+                  <div>
+                    <img src={KP} height={"200vh"} alt="Customization Page" />
+                    <p className="legend">Allows you to customize the pistol that you have chosen the way you want. A lot of redux used here...</p>
+                  </div>
               </Accordion.Content>
               <Accordion.Title active={activeIndex === 2} index={2} onClick={this.handleClick} style={{color: 'black', textAlign: 'left'}}>
                 KUKU
@@ -215,33 +201,16 @@ class Home extends Component {
                 <p style={{color: 'black'}}>
                   KUKU was a group project at DevPoint Labs. We worked together to build this website. Similar to the popular dating app Tinder, you can choose what you want by simply swiping right. React. Redux. React Native. Rails. Has not yet been deployed.
                 </p>
-                <Modal trigger={<Button positive>See Website Images</Button>}>
-                  <Modal.Content>
-                    <Carousel1 autoPlay infiniteLoop showArrows={true} style={styles.carousel}>
-                      <div>
-                        <img src={K} alt="Home Page" style={styles.link} />
-                        <p className="legend">Another Fully Responsive Design</p>
-                      </div>
-                      <div>
-                        <img src={k2} alt="Home Page Lower" style={styles.link} />
-                        <p className="legend">Fun Videos also show that it is also a app. (release date: TBD...)</p>
-                      </div>
-                      <div>
-                        <img src={k3} alt="traditional shopping" style={styles.link} />
-                        <p className="legend">You can shop traditionally if you want and see all images. Or filter them to just your category.</p>
-                      </div>
-                      <div>
-                        <img src={k4} alt="Kuku Shopping" style={styles.link} />
-                        <p className="legend">Going Kuku is shopping one product at a time. Swipe right if you want an item and we will add it to your cart.</p>
-                      </div>
-                    </Carousel1>
-                  </Modal.Content>
-                </Modal>
+                <img src={K} alt="landing page" height={"200vh"}/>
+                <Divider />
+                <img src={k2} alt="lower main page" height={"200vh"} />
+                <Divider />
+                <img src={k3} alt="shopping page" height={"200vh"} />
               </Accordion.Content>
             </Accordion>
           </Segment>
           </Dimmer>
-        </div>
+      </Grid>
       </Dimmer.Dimmable>
       </div>
     );
@@ -252,7 +221,7 @@ const styles = {
   Top: {
     height: '96vh',
     width: '100%',
-    backgroundColor: 'black',
+    backgroundImage: 'linear-gradient(to bottom right, #1f7fe4, #010563)',
     color: 'white',
   },
   middle: {

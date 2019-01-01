@@ -24,6 +24,11 @@ class NavBar extends Component {
                 Resume
               </Link>
             </Menu.Item>
+            <Menu.Item>
+              <Link to="/fun" style={{color: "black"}}>
+                Fun Stuff
+              </Link>
+            </Menu.Item>
           </Menu>
       </div>
     );
