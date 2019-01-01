@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Fun extends Component {
 
@@ -6,7 +7,8 @@ class Fun extends Component {
 
     return(
       <div>
-      Here are some fun things I've done.
+      Here are some fun things I have done.
+      <Link to="/snake">Snake</Link>
       </div>
     )
   }

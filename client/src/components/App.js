@@ -6,7 +6,7 @@ import Home from './Home';
 import About from './About.jsx';
 import Resume from './Resume.jsx';
 import Fun from './Fun'
-import Snake from './Snake';
+import Snakes from './Snake';
 import { Switch, Route } from 'react-router-dom';
 
 class App extends Component {
@@ -20,7 +20,7 @@ class App extends Component {
             <Route exact path='/about' component={About} />
             <Route exact path='/resume' component={Resume} />
             <Route exact path='/fun' component={Fun} />
-            <Route exact path='/snake' component={Snake} />
+            <Route exact path='/snake' component={Snakes} />
             <Route component={NoMatch} />
           </Switch>
       </div>

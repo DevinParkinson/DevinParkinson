@@ -1,13 +1,18 @@
-import React, {Component } from 'react'
-var __html = require('../games/snake.html');
-var template = { __html: __html };
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Snake from 'react-snake-game';
 
-class Snake extends Component {
-  render() {
-    return(
-      <div dangerouslySetInnerHTML={template} />
-    );
-  }
-}
+const WRAPPER_STYLE = {
+    margin: '30px auto',
+    height: 1000,
+    width: 1000
+};
 
-export default Snake
+const Snakes = () => (
+    <div style={WRAPPER_STYLE}>
+        <Snake sound={true} />
+    </div>
+);
+
+ReactDOM.render(<Snake />, document.getElementById('root'));
+export default Snakes

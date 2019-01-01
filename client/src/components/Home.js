@@ -1,21 +1,16 @@
 import React, { Component } from 'react';
 import { Header, Segment, Image, Reveal, Dimmer, Accordion, Icon, Modal, Button, Divider, Grid, Container, Label } from 'semantic-ui-react';
-import styled from 'styled-components'
 import Me from '../images/Me.jpg'
 import Family from '../images/Family.jpg'
 import Kings from '../images/Kings Peak'
 import Main from '../images/KingsMain'
 import B2B from '../images/B2B'
-import B2B2 from '../images/B2B2'
 import B2Babout from '../images/B2Babout'
 import B2BPay from '../images/B2BPay'
 import KP from '../images/KP'
 import K from '../images/K'
 import k2 from '../images/k2'
 import k3 from '../images/k3'
-import k4 from '../images/k4'
-import { Carousel } from 'react-responsive-carousel';
-import './carousel.css';
 import './home.css'
 
 class Home extends Component {
