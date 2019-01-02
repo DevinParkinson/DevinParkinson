@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Header, Segment, Image, Reveal, Dimmer, Accordion, Icon, Modal, Button, Divider, Grid, Container, Label } from 'semantic-ui-react';
+import { Header, Segment, Image, Dimmer, Accordion, Icon, Modal, Button, Divider, Grid, Container, Label, Transition, Popup } from 'semantic-ui-react';
 import Me from '../images/Me.jpg'
 import Family from '../images/Family.jpg'
 import Kings from '../images/Kings Peak'
@@ -12,13 +12,15 @@ import K from '../images/K'
 import k2 from '../images/k2'
 import k3 from '../images/k3'
 import './home.css'
+import TextLoop from "react-text-loop";
 
 class Home extends Component {
 
-  state = { activeIndex: 0 }
+  state = { activeIndex: 0, hide: 500, show: 500, visible: false }
 
   handleShow = () => this.setState({ active: true })
   handleHide = () => this.setState({ active: false })
+  toggleVisibility = () => this.setState({ visible: !this.state.visible })
 
   handleClick = (e, titleProps) => {
     const { index } = titleProps
@@ -30,32 +32,30 @@ class Home extends Component {
 
   render() {
 
-    const { activeIndex, active } = this.state
+    const { activeIndex, active, hide, show, visible } = this.state
 
     return (
       <div>
         <div style={styles.Top}>
           <Segment.Group>
             <Segment style={styles.lseg}>
-              <Header style={styles.header1}>Devin Parkinson</Header>
+              <Popup trigger={
+                  <Button content="Devin Parkinson" style={styles.header1} onClick={this.toggleVisibility} />
+                } content="Click for pictures of me and my family" basic position="top center" />
+              <Transition duration={{ hide, show }} visible={visible}>
+                <div>
+                  <Image style={styles.image} src={Me} />
+                  <Image centered style={styles.bimage} src={Family} />
+                  </div>
+              </Transition>
               <Divider inverted />
-              <Header style={styles.header}>Web Developer</Header>
-              <Header style={styles.header}>Software Engineer</Header>
-              <Header style={styles.header}>Full Stack Developer</Header>
+              <TextLoop springConfig={{ stiffness: 300, damping: 7 }} interval={1200}>
+                <Header style={styles.header}>Web Developer</Header>
+                <Header style={styles.header}>Software Engineer</Header>
+                <Header style={styles.header}>Full Stack Developer</Header>
+              </TextLoop>
             </Segment>
             <Segment style={{ position: 'absolute', display: 'block', justifyContent: 'right', backgroundColor: 'black', background: 'transparent', marginLeft: '60%', marginTop: '10vh', color: 'white'}}>
-              <Reveal animated='move left'>
-                <Reveal.Content visible>
-                  <Image style={styles.image} src={Me} />
-                  <Header style={{backgroundColor: 'black', color: 'white', textAlign: 'center'}}>Me</Header>
-                </Reveal.Content>
-                <Reveal.Content hidden>
-                  <Segment style={styles.pictureback}>
-                    <Header style={{textAlign: 'center'}}>My Family</Header>
-                    <Image centered style={styles.bimage} src={Family} />
-                  </Segment>
-                </Reveal.Content>
-              </Reveal>
             </Segment>
           </Segment.Group>
           <p class="pulsate">Scroll Down To See Credentials</p>
@@ -224,21 +224,24 @@ const styles = {
     width: '100%',
   },
   header: {
-    fontFamily: "coven-medium,sans-serif",
+    fontFamily: "DejaVu Sans Mono, monospace",
     textAlign: 'center',
-    fontSize: '5vh',
-    color: 'white'
+    fontSize: '3vh',
+    color: 'white',
+    marginLeft: '6vw'
   },
   header1: {
-    fontFamily: "coven-medium,sans-serif",
+    fontFamily: "DejaVu Sans Mono, monospace",
     textAlign: 'center',
-    fontSize: '8vh',
-    color: 'white'
+    fontSize: '5vh',
+    color: 'white',
+    backgroundColor: 'transparent',
+    width: '50vw',
   },
   lseg: {
     position: 'absolute',
-    marginTop: '15vh',
-    marginLeft: '8vw',
+    marginTop: '7vh',
+    marginLeft: '4vw',
     width: "50%",
     backgroundColor: 'black',
     background: 'transparent'
@@ -252,14 +255,15 @@ const styles = {
     opacity: "1"
   },
   image: {
-    float: 'right'
+    float: 'right',
+    height: '30vh'
   },
   pictureback: {
-    backgroundColor: 'white',
-    color: 'black',
+    backgroundColor: 'transparent',
+    color: 'white',
   },
   bimage: {
-    width: '18vw'
+    height: '40vh',
   },
   link: {
     height: '50vh'
