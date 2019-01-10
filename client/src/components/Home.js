@@ -54,13 +54,19 @@ class Home extends Component {
                 <Header style={styles.header}>Software Engineer</Header>
                 <Header style={styles.header}>Full Stack Developer</Header>
               </TextLoop>
+              <Divider />
+              <Grid columns={2}>
+                <Grid.Row>
+                  <Grid.Column>
+                    <Button centered style={{borderRadius: '25%', border: '1px solid white', backgroundImage: 'linear-gradient(to bottom right, #1f7fe4, #010563)', color: 'white', width: 'auto', marginTop: '15vh'}}>Background</Button>
+                  </Grid.Column>
+                </Grid.Row>
+              </Grid>
             </Segment>
             <Segment style={{ position: 'absolute', display: 'block', justifyContent: 'right', backgroundColor: 'black', background: 'transparent', marginLeft: '60%', marginTop: '10vh', color: 'white'}}>
             </Segment>
           </Segment.Group>
-          <p class="pulsate">Scroll Down To See Credentials</p>
-          <Image src="http://willmoreoutfitters.ca/wp-content/uploads/2017/04/arrow-down@2x.png" style={{height: '6vh', marginLeft: "54%"}} />
-        </div>
+          </div>
         <Dimmer.Dimmable as={Segment} dimmed={active}>
           <Grid columns={2} divided>
             <Grid.Row>
